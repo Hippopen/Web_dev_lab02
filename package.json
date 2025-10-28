@@ -2,6 +2,7 @@
   "name": "jsx-without-react",
   "version": "1.0.0",
   "scripts": {
+    "prebuild": "chmod +x ./node_modules/.bin/vite || true",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
