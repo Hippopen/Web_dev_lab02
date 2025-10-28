@@ -1,0 +1,12 @@
+/*{
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "cSpell.enabledFileTypes": {
+        "typescriptreact": false
+    }
+} */
+{
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "cSpell.enabledFileTypes": {
+        "typescriptreact": false
+    }
+}

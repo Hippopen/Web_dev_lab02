@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My JSX App</title>
+  <style>
+    /* =================================================================
+     * STYLES TỔNG QUÁT (BODY, BUTTON, INPUT)
+     * ================================================================= */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3 {
+      color: #111;
+    }
+
+    button,
+    .btn {
+      font-size: 1rem;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover,
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    button:disabled {
+      background-color: #c0c0c0;
+      cursor: not-allowed;
+    }
+
+    input[type="text"],
+    select {
+      font-size: 1rem;
+      padding: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 2.5rem 0;
+    }
+
+    /* =================================================================
+     * APP SHELL (VỎ BỌC)
+     * ================================================================= */
+    .app-shell-container {
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+
+    .app-widget {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+    
+    .app-widget h1 {
+        margin-top: 0;
+        text-align: center;
+    }
+    
+    /* =================================================================
+     * CARD COMPONENT (Dùng chung cho Dashboard)
+     * ================================================================= */
+    .card {
+      background: #fdfdfd;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .card-title {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e0e0e0;
+      background-color: #f9f9f9;
+    }
+    .card-title h2 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    /* =================================================================
+     * DASHBOARD APP
+     * ================================================================= */
+    .dashboard-header {
+      margin-bottom: 1rem;
+    }
+    .dashboard-header h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .dashboard-controls .card-content {
+      display: flex;
+      flex-wrap: wrap; /* Cho phép xuống dòng trên di động */
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .chart-canvas {
+      max-width: 100%;
+      height: auto;
+    }
+    .chart-card .card-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* =================================================================
+     * TODO APP
+     * ================================================================= */
+    .todo-app {
+      max-width: none; /* Bỏ max-width cũ */
+      padding: 0; /* Bỏ padding cũ */
+      box-shadow: none; /* Bỏ shadow cũ */
+      background: none; /* Bỏ background cũ */
+    }
+    
+    .add-todo-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .add-todo-form input[type="text"] {
+      flex-grow: 1; /* Input chiếm hết chỗ */
+    }
+    
+    .todo-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: #fcfcfc;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+    .todo-item input[type="checkbox"] {
+      width: 1.2em;
+      height: 1.2em;
+    }
+    .todo-item span {
+      flex-grow: 1;
+      font-size: 1.1rem;
+    }
+    .todo-item.completed span {
+      text-decoration: line-through;
+      color: #888;
+    }
+    .btn-delete {
+      background: #e74c3c;
+    }
+    .btn-delete:hover {
+      background: #c0392b;
+    }
+
+    /* =================================================================
+     * COUNTER APP
+     * ================================================================= */
+    .counter {
+      text-align: center;
+    }
+    .counter h2 {
+      font-size: 2.5rem;
+      color: #333;
+      margin: 1rem 0 1.5rem 0;
+    }
+    .counter .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .counter .btn-inc {
+      background-color: #28a745;
+    }
+    .counter .btn-inc:hover {
+      background-color: #218838;
+    }
+    .counter .btn-dec {
+      background-color: #ffc107;
+      color: #333;
+    }
+    .counter .btn-dec:hover {
+      background-color: #e0a800;
+    }
+    .counter .btn-reset {
+      background-color: #6c757d;
+    }
+    .counter .btn-reset:hover {
+      background-color: #5a6268;
+    }
+</style>
+</head>
+<body>
+  
+  <div id="root"></div>
+  
+  <script type="module" src="/src/main.tsx"></script>
+
+</body>
+</html>
